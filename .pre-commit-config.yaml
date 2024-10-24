@@ -98,7 +98,7 @@ repos:
     hooks:
       - id: check-english-only
         name: Check for English-only content
-        entry: python scripts/check_english_only.py
+        entry: python check_english_only.py
         language: python
         types: [text]  # すべてのテキストファイルをチェック
         exclude: |
