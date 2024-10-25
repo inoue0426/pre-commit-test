@@ -1,0 +1,12 @@
+name: python_base
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - pip=24.0
+  - python=3.12
+  - pip:
+      - matplotlib
+      - numpy
+      - pandas
+      - notebook
