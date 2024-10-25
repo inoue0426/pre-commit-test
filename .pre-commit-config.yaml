@@ -85,3 +85,26 @@ repos:
             ^data/|
             ^tests/fixtures/
           )
+
+  # Check Dockerfile
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.12.0
+    hooks:
+      - id: hadolint
+
+  # Type check with Mypy
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.3.0
+    hooks:
+      - id: mypy
+
+  # Exclude .env files from git
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-added-large-files
+      - id: detect-private-key
+      - id: check-merge-conflict
+
+# Exclude .env files from commits
+exclude: '^\.env$'
