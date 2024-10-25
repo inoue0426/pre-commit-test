@@ -40,6 +40,8 @@ repos:
       - id: check-added-large-files
         args: [--maxkb=1024]
       - id: end-of-file-fixer
+      - id: detect-private-key
+      - id: check-merge-conflict
 
   - repo: https://github.com/psf/black
     rev: 24.10.0
@@ -95,12 +97,5 @@ repos:
     rev: v1.13.0
     hooks:
       - id: mypy
-
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
-    hooks:
-      - id: check-added-large-files
-      - id: detect-private-key
-      - id: check-merge-conflict
 
 exclude: '^\.env$'
