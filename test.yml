@@ -1,0 +1,27 @@
+company: TechCorp Solutions
+founded: 2005
+active: true
+employees:
+  - id: 1
+    name: John Smith
+    position: CEO
+    salary: 150000.50
+  - id: 2
+    name: Jane Doe
+    position: CTO
+    salary: 140000
+  - id: 3
+    name: Bob Johnson
+    position: Developer
+    salary: "95000" # This should be a number, not a string.
+departments:
+  Engineering: 50
+  Marketing: 25
+  Sales: 30
+  HR: 10, # Extra comma here.
+products:
+  - CloudSuite
+  - DataAnalyzer
+  - SecureNet
+annual_revenue: 10000000.75
+is_public: False # Should be lowercase 'false'.

@@ -7,34 +7,30 @@ ci:
   autoupdate_schedule: quarterly
   skip: ["next-lint-website"]
 
-default_excludes: &default_excludes >
-  (?x)(
-    build|
-    stubs|
-    ^bot/templates/$|
-    openassistant/templates|
-    docs/docs/api/openapi\.json|
-    scripts/postprocessing/regex_pii_detector\.py
-  )
-
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
       - id: trailing-whitespace
+        exclude: >
+          (?x)(
+            build|
+            stubs|
+            ^bot/templates/$|
+            openassistant/templates|
+            docs/docs/api/openapi\.json|
+            scripts/postprocessing/regex_pii_detector\.py
+          )
       - id: check-ast
-        exclude: *default_excludes
       - id: check-yaml
         exclude: ^copilot/.*/addons/.*$
       - id: check-json
-        exclude: *default_excludes
       - id: check-case-conflict
       - id: detect-private-key
       - id: fix-encoding-pragma
         args: [--remove]
       - id: forbid-submodules
       - id: mixed-line-ending
-        exclude: *default_excludes
       - id: requirements-txt-fixer
       - id: check-executables-have-shebangs
       - id: check-shebang-scripts-are-executable
@@ -44,7 +40,6 @@ repos:
       - id: check-added-large-files
         args: [--maxkb=1024]
       - id: end-of-file-fixer
-        exclude: *default_excludes
 
   - repo: https://github.com/psf/black
     rev: 23.3.0
